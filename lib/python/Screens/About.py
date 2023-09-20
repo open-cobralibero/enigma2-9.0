@@ -39,6 +39,9 @@ class About(Screen):
 		AboutText += _("Build date: ") + about.getBuildDateString() + "\n"
 		AboutText += _("Build Image: open-cobralibero") + "\n"
 		AboutText += _("Info: https://cobraliberosat.net") + "\n"
+		ImageVersion = _("Last update: ") + about.getImageVersionString()
+		self["ImageVersion"] = StaticText(ImageVersion)
+		AboutText += ImageVersion + "\n" 
 
 		# [WanWizard] Removed until we find a reliable way to determine the installation date
 		# AboutText += _("Installed: ") + about.getFlashDateString() + "\n"
