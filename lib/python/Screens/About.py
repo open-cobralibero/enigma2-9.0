@@ -36,6 +36,9 @@ class About(Screen):
 		cpu = about.getCPUInfoString()
 		AboutText += _("CPU: ") + cpu + "\n"
 		AboutText += _("Image: ") + about.getImageTypeString() + "\n"
+		ImageVersion = _("Last update: ") + about.getImageVersionString()
+		self["ImageVersion"] = StaticText(ImageVersion)
+		AboutText += ImageVersion + "\n" 
 		AboutText += _("Build Image: open-cobralibero") + "\n"
 		AboutText += _("Info: https://cobraliberosat.net") + "\n"
 		ImageVersion = _("Last update: ") + about.getImageVersionString()
@@ -45,10 +48,7 @@ class About(Screen):
 		# [WanWizard] Removed until we find a reliable way to determine the installation date
 		# AboutText += _("Installed: ") + about.getFlashDateString() + "\n"
 
-		EnigmaVersion = about.getEnigmaVersionString()
-		self["ImageVersion"] = StaticText(EnigmaVersion)
-		AboutText += EnigmaVersion + "\n" 
-		
+		EnigmaVersion = about.getEnigmaVersionString() + "\n"
 		EnigmaVersion = EnigmaVersion.rsplit("-", EnigmaVersion.count("-") - 2)
 		if len(EnigmaVersion) == 3:
 			EnigmaVersion = EnigmaVersion[0] + " (" + EnigmaVersion[2] + "-" + EnigmaVersion[1] + ")"
