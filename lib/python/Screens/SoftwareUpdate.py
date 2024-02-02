@@ -125,7 +125,7 @@ class UpdatePlugin(Screen, ProtectedScreen):
 
 		# or display a generic warning if fetching failed
 		else:
-			message = _("The status of the current image could not be checked because %s can not be reached.") % ("https://feed.dream.cobraliberosat.net")
+			message = _("The status of the current image could not be checked because %s can not be reached.") % ("https://feed.9.0.cobraliberosat.net")
 
 		# show the user the message first
 		if message is not None:
