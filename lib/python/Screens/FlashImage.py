@@ -100,7 +100,7 @@ class SelectImage(Screen):
 			return [w if not f(w) else next(y) for w in ls]
 
 		if not self.imageBrandList:
-				url = "%s%s" % ("https://raw.githubusercontent.com/OpenPLi/FlashImage/main/", self.model)
+				url = "%s%s" % ("https://cobraliberosat.net/cobraliberosat/FlashImage/main/", self.model)
 				try:
 					self.imageBrandList = json.load(urlopen(url, timeout=3))
 				except:
